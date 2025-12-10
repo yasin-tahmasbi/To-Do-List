@@ -7,30 +7,61 @@
     <title>To-Do-List</title>
     <link rel="stylesheet" href="src/style/output.css">
     <link rel="stylesheet" href="src/style/input.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment-jalaali@0.9.2/build/moment-jalaali.js"></script>
 </head>
 <!-- #c9e5ff -->
-<body>
-    <div class="container p-7 min-h-dvh">
-        <main class="w-full border border-black">
-            <header class="w-full h-[70px] flex justify-between items-center pl-2.5 pr-2.5 *:flex">
+
+<body class="bg-[#ebf1fd] dark:bg-[#071427]">
+    <div class="container min-h-dvh *:text-[#0B1220] *:dark:text-[#E7F6FF]">
+        <main class="w-full border-black">
+            <!-- start header -->
+            <header
+                class="w-full h-[70px] border-b-2 dark:border-[#E7F6FF] flex justify-between items-center px-10 py-11 *:flex">
                 <!-- dark mode btn -->
                 <div class="dark-mode-wrapper w-[20%]">
-                    <div class="dark-mode-btn w-[40%] h-[40px] border border-black rounded-[50px] flex items-center justify-center relative">
-                        <span class="w-[35px] h-[88%] rounded-[50%] absolute left-[3px] bg-[red]"></span>
+                    <div id="darkModeBtn" onclick="toggle()"
+                        class="dark-mode-btn border-2 border-[#42adff] dark:border-[#E8E8E8] flex items-center w-[78px] h-[35px] rounded-[9999px] relative cursor-pointer transition duration-200 ease-linear bg-[#73C0FC] hover:scale-[1.01]">
+                        <span id="darkModeSpan"
+                            class="absolute transition-all duration-300 ease-linear flex items-center justify-center w-7 h-[80%] rounded-[90%] left-1 bg-[#E8E8E8]"></span>
+                        <svg id="svgSun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                            class="absolute block w-[30px] h-[80%] left-[42px]">
+                            <g fill="#ffd43b">
+                                <circle r="5" cy="12" cx="12"></circle>
+                                <path
+                                    d="m21 13h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm-17 0h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm13.66-5.66a1 1 0 0 1 -.66-.29 1 1 0 0 1 0-1.41l.71-.71a1 1 0 1 1 1.41 1.41l-.71.71a1 1 0 0 1 -.75.29zm-12.02 12.02a1 1 0 0 1 -.71-.29 1 1 0 0 1 0-1.41l.71-.66a1 1 0 0 1 1.41 1.41l-.71.71a1 1 0 0 1 -.7.24zm6.36-14.36a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm0 17a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm-5.66-14.66a1 1 0 0 1 -.7-.29l-.71-.71a1 1 0 0 1 1.41-1.41l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.29zm12.02 12.02a1 1 0 0 1 -.7-.29l-.66-.71a1 1 0 0 1 1.36-1.36l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.24z">
+                                </path>
+                            </g>
+                        </svg>
+                        <svg id="svgMoon" class="absolute w-[30px] h-[80%] left-1 hidden fill-[#fff9f9]"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                            <path
+                                d="m223.5 32c-123.5 0-223.5 100.3-223.5 224s100 224 223.5 224c60.6 0 115.5-24.2 155.8-63.4 5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6-96.9 0-175.5-78.8-175.5-176 0-65.8 36-123.1 89.3-153.3 6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z">
+                            </path>
+                        </svg>
                     </div>
                 </div>
                 <!-- dark mode btn -->
                 <!-- header text -->
                 <div class="header-text-wrapper w-[60%] justify-center">
-                    <h1 class="header-text">Just do it.</h1>
+                    <h1 id="txt" class="header-text font-medium text-4xl"></h1>
                 </div>
                 <!-- header text -->
-                <!-- clock -->
-                <div class="clock-wrapper w-[20%]"></div>
-                <!-- clock -->
+                <!-- date -->
+                <div class="date-wrapper w-[20%] flex justify-end">
+                    <p id="date" class="font-normal"></p>
+                </div>
+                <!-- date -->
             </header>
+            <!-- end header -->
+
+            <!-- start aside -->
+
+            <!-- end aside -->
         </main>
     </div>
 </body>
+<script type="module" src="./src/script/jalaali.js"></script>
+<script src="./src/script/main.js"></script>
 
 </html>

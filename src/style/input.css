@@ -1,3 +1,107 @@
 /* npx @tailwindcss/cli -i ./src/style/input.css -o ./src/style/output.css --watch */
 
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* dark/light mode btn */
+
+@layer components {
+
+    /* آیکون‌ها — svg داخل span خورشید/ماه */
+    #svgSun {
+        animation: rotate 15s linear infinite;
+    }
+
+    #svgMoon {
+        animation: tilt 5s linear infinite;
+    }
+
+    @keyframes rotate {
+        0% {
+            transform: rotate(0);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes tilt {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        25% {
+            transform: rotate(-10deg);
+        }
+
+        75% {
+            transform: rotate(10deg);
+        }
+
+        100% {
+            transform: rotate(0deg);
+        }
+    }
+}
+
+
+/* dark/light mode btn */
+
+/* poppins font */
+
+@font-face {
+    font-family: 'poppins';
+    src: url('../font/poppins/Poppins-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'poppins';
+    src: url('../font/poppins/Poppins-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'poppins';
+    src: url('../font/poppins/Poppins-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'poppins';
+    src: url('../font/poppins/Poppins-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'poppins';
+    src: url('../font/poppins/Poppins-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'poppins';
+    src: url('../font/poppins/Poppins-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'poppins';
+    src: url('../font/poppins/Poppins-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@theme {
+    --font-poppins: 'poppins', sans-serif;
+}
+
+/* poppins font */
