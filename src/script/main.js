@@ -69,10 +69,80 @@ function toggle() {
         svgMoon.classList.remove('block');
         svgMoon.classList.add('hidden');
 
-        svgSun.classList.remove('hidden'); 
+        svgSun.classList.remove('hidden');
         svgSun.classList.add('block');
     }
 
     _status = !_status
 }
 // dark/light btn //
+
+// aside click //
+
+const asideLi = document.querySelectorAll('aside>div>ul>li')
+const task = document.querySelector('#task')
+const trash = document.querySelector('#trash')
+
+task.classList.add('block')
+trash.classList.add('hidden')
+
+asideLi.forEach((item, index) => {
+    item.addEventListener('click', () => {
+        if (index === 0) {
+            task.classList.add('block');
+            task.classList.remove('hidden');
+            trash.classList.add('hidden');
+            trash.classList.remove('block');
+        } else if (index === 1) {
+            task.classList.add('hidden');
+            task.classList.remove('block');
+            trash.classList.add('block');
+            trash.classList.remove('hidden');
+        }
+    })
+})
+
+// aside click //
+
+// tasks //
+
+const taskInput = document.getElementById('taskInput')
+const addBtn = document.getElementById('addBtn')
+const taskUl = document.getElementById('taskUl')
+const doneList = document.getElementById('doneList')
+const search = document.getElementById('search')
+
+addBtn.addEventListener('click', () => {
+    let taskLi = taskInput.value
+    if (taskLi === '') {
+        taskInput.classList.add('border-red-600')
+    } else {
+        newLi(taskLi)
+        taskInput.value = null
+        taskInput.focus()
+    }
+
+})
+
+function newLi(taskLi) {
+    const li = document.createElement('li')
+    li.innerHTML = `
+      <p>${taskLi}</p>
+      <div class="flex gap-4 *:cursor-pointer">
+        <i class="ri-delete-bin-fill text-[#EF233C]"></i>
+        <i class="ri-pencil-fill"></i>
+        <i class="ri-check-line text-[23px] font-black"></i>
+      </div>
+    `
+    const _delete = li.querySelector('.ri-delete-bin-fill')
+        _delete.addEventListener('click', ()=>{
+            li.remove()
+        })
+    taskUl.appendChild(li)
+}
+
+
+
+
+
+// tasks //

@@ -7,17 +7,18 @@
     <title>To-Do-List</title>
     <link rel="stylesheet" href="src/style/output.css">
     <link rel="stylesheet" href="src/style/input.css">
+    <link rel="stylesheet" href="src/remix/remixicon.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/moment-jalaali@0.9.2/build/moment-jalaali.js"></script>
 </head>
 <!-- #c9e5ff -->
 
-<body class="bg-[#ebf1fd] dark:bg-[#071427]">
-    <div class="container min-h-dvh *:text-[#0B1220] *:dark:text-[#E7F6FF]">
-        <main class="w-full border-black">
+<body class="bg-[#ebf1fd] dark:bg-[#071427]" style="height: calc(100vh - 80px) !important;">
+    <div class="container h-full *:text-[#0B1220] *:dark:text-[#E7F6FF]">
+        <div class="w-full h-full border-black">
             <!-- start header -->
             <header
-                class="w-full h-[70px] border-b-2 dark:border-[#E7F6FF] flex justify-between items-center px-10 py-11 *:flex">
+                class="w-full h-20 border-b-2 dark:border-[#E7F6FF] flex justify-between items-center px-10 *:flex">
                 <!-- dark mode btn -->
                 <div class="dark-mode-wrapper w-[20%]">
                     <div id="darkModeBtn" onclick="toggle()"
@@ -54,14 +55,69 @@
                 <!-- date -->
             </header>
             <!-- end header -->
+            <!-- start main -->
+            <main class="w-full h-full flex ">
+                <!-- start aside -->
+                <aside id="aside" class="w-[12%] h-full border-r-2 py-2">
+                    <div>
+                        <ul
+                            class="*:px-5 *:py-2 *:text-2xl *:hover:bg-[#0077B6] *:hover:text-[#E7F6FF] *:cursor-pointer *:transition-all *:duration-100 *:ease-linear">
+                            <li>Task</li>
+                            <li>Trash</li>
+                        </ul>
+                    </div>
+                </aside>
+                <!-- end aside -->
 
-            <!-- start aside -->
-
-            <!-- end aside -->
-        </main>
+                <div id="task" class="w-[88%] h-full p-2.5 flex justify-center items-center flex-wrap">
+                    <!-- inputs -->
+                    <div class="flex items-center justify-between w-full px-5 pb-10 pt-[30px] border-b-2">
+                        <div id="inputWrapper" class="inputWrapper w-1/2 flex items-center justify-start">
+                            <input id="taskInput" type="text"
+                                class="border outline-0 border-[#00B4D8] w-[60%] h-[45px] pl-2.5 placeholder:text-[#64748B] placeholder:dark:text-[#94A3B8]"
+                                placeholder="Enter your task">
+                            <button id="addBtn"
+                                class="border border-[#00B4D8] flex items-center px-2 h-[45px] bg-[#00B4D8] dark:bg-[#90E0EF] dark:text-[#071427] text-white  cursor-pointer">
+                                Add Task
+                            </button>
+                        </div>
+                        <div class="w-1/2 flex items-center justify-end">
+                            <input id="search" type="text"
+                                class="w-[40%] border border-[#00B4D8]  h-[45px] pl-2.5 placeholder:text-[#64748B] placeholder:dark:text-[#94A3B8]"
+                                placeholder="Search...">
+                        </div>
+                    </div>
+                    <!-- inputs -->
+                    <div class="flex h-[80%] w-full *:p-5">
+                        <div id="doIt" class="w-1/2 h-full border-r-2">
+                            <ul id="taskUl"
+                                class="*:flex *:justify-between *:text-[20px] *:hover:bg-[#a7e0ea] *:px-2.5 *:py-2 *:transition-all *:duration-150 dark:*:hover:text-[#0B1220]">
+                             </ul>
+                        </div>
+                        <div id="done" class="w-1/2 h-full">
+                            <ul id="doneList"
+                                class="*:flex *:justify-between *:text-[20px] *:hover:bg-[#a7e0ea] *:px-2.5 *:py-2 *:transition-all *:duration-150 dark:*:hover:text-[#0B1220]">
+                                <li>
+                                    <p>item 1</p>
+                                    <div class="flex gap-4 *:cursor-pointer">
+                                        <i class="ri-delete-bin-fill text-[#EF233C]"></i>
+                                        <i class="ri-arrow-go-back-fill"></i>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="trash" class="w-[88%] h-full">
+                    <input type="text" class="">
+                </div>
+            </main>
+            <!-- end main -->
+        </div>
     </div>
 </body>
+
 <script type="module" src="./src/script/jalaali.js"></script>
-<script src="./src/script/main.js"></script>
+<script src="./src/script/main.js" defer></script>
 
 </html>
