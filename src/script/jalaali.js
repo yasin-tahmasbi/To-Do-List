@@ -1,6 +1,7 @@
 setInterval(() => {
-    let date = document.getElementById('date')
-    const now = moment()
-    date.innerText = now.format('YYYY/MM/DD  HH:mm:ss')
+  let date = document.getElementById("date");
+  let time = document.getElementById("time");
+  const now = moment();
+  date.innerText = now.format("jDD/jMM/jYYYY");
+  time.innerText = now.format("HH:mm:ss");
 }, 1000);
-

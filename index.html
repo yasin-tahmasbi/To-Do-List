@@ -13,12 +13,11 @@
 </head>
 <!-- #c9e5ff -->
 
-<body class="bg-[#ebf1fd] dark:bg-[#071427]" style="height: calc(100vh - 80px) !important;">
-    <div class="container h-full *:text-[#0B1220] *:dark:text-[#E7F6FF]">
+<body class="bg-[#ebf1fd] dark:bg-[#071427] min-h-screen">
+    <div class="container min-w-full h-full *:text-[#0B1220] *:dark:text-[#E7F6FF]">
         <div class="w-full h-full border-black">
             <!-- start header -->
-            <header
-                class="w-full h-20 border-b-2 dark:border-[#E7F6FF] flex justify-between items-center px-10 *:flex">
+            <header class="w-full h-20 border-b-2 dark:border-[#E7F6FF] flex justify-between items-center px-10 *:flex">
                 <!-- dark mode btn -->
                 <div class="dark-mode-wrapper w-[20%]">
                     <div id="darkModeBtn" onclick="toggle()"
@@ -49,29 +48,28 @@
                 </div>
                 <!-- header text -->
                 <!-- date -->
-                <div class="date-wrapper w-[20%] flex justify-end">
+                <div class="date-wrapper w-[20%] flex justify-end gap-5">
                     <p id="date" class="font-normal"></p>
+                    <p id="time" class="font-normal"></p>
                 </div>
                 <!-- date -->
             </header>
             <!-- end header -->
             <!-- start main -->
-            <main class="w-full h-full flex ">
+            <main class="w-full flex" style="height: calc(100vh - 80px);">
                 <!-- start aside -->
-                <aside id="aside" class="w-[12%] h-full border-r-2 py-2">
-                    <div>
-                        <ul
-                            class="*:px-5 *:py-2 *:text-2xl *:hover:bg-[#0077B6] *:hover:text-[#E7F6FF] *:cursor-pointer *:transition-all *:duration-100 *:ease-linear">
-                            <li>Task</li>
-                            <li>Trash</li>
-                        </ul>
-                    </div>
+                <aside id="aside" class="w-[12%] border-r-2 py-2 min-h-full">
+                    <ul
+                        class="h-full flex-1 *:px-5 *:py-2 *:text-2xl *:hover:bg-[#0077B6] *:hover:text-[#E7F6FF] *:cursor-pointer *:transition-all *:duration-100 *:ease-linear">
+                        <li>Task</li>
+                        <li>Trash</li>
+                    </ul>
                 </aside>
                 <!-- end aside -->
 
                 <div id="task" class="w-[88%] h-full p-2.5 flex justify-center items-center flex-wrap">
                     <!-- inputs -->
-                    <div class="flex items-center justify-between w-full px-5 pb-10 pt-[30px] border-b-2">
+                    <div class="flex items-center justify-between w-full h-25 px-5 pb-10 pt-[30px] border-b-2">
                         <div id="inputWrapper" class="inputWrapper w-1/2 flex items-center justify-start">
                             <input id="taskInput" type="text"
                                 class="border outline-0 border-[#00B4D8] w-[60%] h-[45px] pl-2.5 placeholder:text-[#64748B] placeholder:dark:text-[#94A3B8]"
@@ -87,29 +85,35 @@
                                 placeholder="Search...">
                         </div>
                     </div>
-                    <!-- inputs -->
-                    <div class="flex h-[80%] w-full *:p-5">
-                        <div id="doIt" class="w-1/2 h-full border-r-2">
+                    <!-- End inputs -->
+                    <div class="flex min-h-full w-full *:p-5">
+                        <div id="doIt" class="w-1/2 min-h-full border-r-2">
                             <ul id="taskUl"
-                                class="*:flex *:justify-between *:text-[20px] *:hover:bg-[#a7e0ea] *:px-2.5 *:py-2 *:transition-all *:duration-150 dark:*:hover:text-[#0B1220]">
-                             </ul>
+                                class="min-h-full *:flex *:justify-between *:text-[20px] *:hover:bg-[#a7e0ea]  *:px-2.5 *:py-2 *:transition-all *:duration-150 dark:*:hover:text-[#0B1220]">
+                            </ul>
                         </div>
-                        <div id="done" class="w-1/2 h-full">
+                        <!-- -------------------------------------------- -->
+                        <div id="done" class="w-1/2 min-h-full">
                             <ul id="doneList"
-                                class="*:flex *:justify-between *:text-[20px] *:hover:bg-[#a7e0ea] *:px-2.5 *:py-2 *:transition-all *:duration-150 dark:*:hover:text-[#0B1220]">
-                                <li>
-                                    <p>item 1</p>
-                                    <div class="flex gap-4 *:cursor-pointer">
-                                        <i class="ri-delete-bin-fill text-[#EF233C]"></i>
-                                        <i class="ri-arrow-go-back-fill"></i>
-                                    </div>
-                                </li>
+                                class="min-h-full *:flex *:justify-between *:dark:text-[#0B1220] *:text-[20px] *:mb-2.5 *:bg-[#c5ecc7] *:px-2.5 *:py-2 *:transition-all *:duration-150 dark:*:hover:text-[#0B1220]">
+                                <!-- -------------------------------------------- -->
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div id="trash" class="w-[88%] h-full">
-                    <input type="text" class="">
+                    <div class="w-full flex items-center justify-start px-5 pb-10 pt-[30px]">
+                        <input id="trashSearch" type="text"
+                            class="w-[20%] border border-[#00B4D8]  h-[45px] pl-2.5 placeholder:text-[#64748B] placeholder:dark:text-[#94A3B8]"
+                            placeholder="Search...">
+                    </div>
+                    <!-- trash ul -->
+                    <div id="trashUlWrapper" class="h-full w-full">
+                        <ul id="trashUl"
+                            class="flex flex-wrap w-full gap-2.5 *:max-h-[50px] *:w-[32%] p-5 h-full *:flex *:justify-between *:dark:text-[#0B1220] *:text-[20px] *:mb-2.5 *:bg-[#facccc] *:px-2.5 *:py-2 *:transition-all *:duration-150 dark:*:hover:text-[#0B1220]">
+                        </ul>
+                    </div>
+                    <!-- trash ul -->
                 </div>
             </main>
             <!-- end main -->
@@ -117,7 +121,7 @@
     </div>
 </body>
 
-<script type="module" src="./src/script/jalaali.js"></script>
+<script type="module" src="./src/script/jalaali.js"></script> 
 <script src="./src/script/main.js" defer></script>
 
 </html>
