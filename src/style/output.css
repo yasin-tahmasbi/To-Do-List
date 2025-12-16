@@ -1392,6 +1392,11 @@
       font-size: 16px;
     }
   }
+  .sm\:text-\[20px\] {
+    @media (width >= 40rem) {
+      font-size: 20px;
+    }
+  }
   .sm\:font-black {
     @media (width >= 40rem) {
       --tw-font-weight: var(--font-weight-black);
