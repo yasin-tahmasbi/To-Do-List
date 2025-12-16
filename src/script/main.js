@@ -251,7 +251,7 @@ function doneItem(taskObj) {
   li.dataset.id = taskObj.id;
   li.innerHTML = `
       <del>${taskObj.text}</del>
-     <div class="flex gap-1 sm:gap-4 *:cursor-pointer">
+     <div class="flex gap-2.5 sm:gap-4 *:cursor-pointer">
        <i class="ri-delete-bin-fill text-[#EF233C]"></i>
        <i class="ri-arrow-go-back-fill"></i>
      </div>
@@ -289,7 +289,7 @@ function newTrashLi(taskObj) {
   li.dataset.id = taskObj.id;
   li.innerHTML = ` 
       <p>${taskObj.text}</p>
-      <div class="flex gap-1 sm:gap-4 *:cursor-pointer items-center">
+      <div class="flex gap-2.5 sm:gap-4 *:cursor-pointer items-center">
         <i class="ri-delete-bin-fill text-[#EF233C]"></i>
       </div>
     `;
