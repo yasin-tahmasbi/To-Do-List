@@ -110,8 +110,10 @@ const taskInput = document.getElementById("taskInput");
 const addBtn = document.getElementById("addBtn");
 const taskUl = document.getElementById("taskUl");
 const doneList = document.getElementById("doneList");
-const search = document.getElementById("search");
 const trashUl = document.getElementById("trashUl");
+const _search = document.getElementById("search");
+const trashSearch = document.getElementById("trashSearch");
+
 let ـtext = "";
 let arrTasks = [];
 const savedTasks = localStorage.getItem("tasks");
@@ -145,6 +147,26 @@ addBtn.addEventListener("click", () => {
     newLi(taskObj);
     taskInput.value = null;
     taskInput.focus();
+  }
+});
+
+taskInput.addEventListener("keyup", (e) => {
+  if (e.key === "Enter") {
+    ـtext = taskInput.value;
+    if (ـtext === "") {
+      taskInput.classList.add("border-red-600");
+    } else {
+      let taskObj = {
+        text: ـtext,
+        status: "todo",
+        id: Date.now(),
+      };
+      arrTasks.push(taskObj);
+      localStorage.setItem("tasks", JSON.stringify(arrTasks));
+      newLi(taskObj);
+      taskInput.value = null;
+      taskInput.focus();
+    }
   }
 });
 
@@ -307,5 +329,39 @@ function newTrashLi(taskObj) {
     });
   });
 }
+
+// search //////////////////////////////////
+
+_search.addEventListener("keyup", (e) => {
+  console.log("typing...");
+
+  let temp = e.target.value.toLowerCase();
+  const words = document.querySelectorAll("#taskUl p, #doneList del");
+
+  words.forEach((val) => {
+    if (val.innerText.toLowerCase().indexOf(temp) >= 0) {
+      val.parentElement.classList.remove("!hidden");
+    } else {
+      val.parentElement.classList.add("!hidden");
+    }
+  });
+});
+
+// Trash search //////////////////////////////////
+
+trashSearch.addEventListener("keyup", (e) => {
+  console.log("typing...");
+
+  let temp = e.target.value.toLowerCase();
+  const words = document.querySelectorAll("#trashUl p");
+
+  words.forEach((val) => {
+    if (val.innerText.toLowerCase().indexOf(temp) >= 0) {
+      val.parentElement.classList.remove("!hidden");
+    } else {
+      val.parentElement.classList.add("!hidden");
+    }
+  });
+});
 
 // tasks //

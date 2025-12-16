@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
 
 <head>
     <meta charset="UTF-8">
@@ -87,18 +87,21 @@
                     </div>
                     <!-- End inputs -->
                     <div class="flex min-h-full w-full *:p-5">
+                        <!-- New Task List -->
                         <div id="doIt" class="w-1/2 min-h-full border-r-2">
                             <ul id="taskUl"
                                 class="min-h-full *:flex *:justify-between *:text-[20px] *:hover:bg-[#a7e0ea]  *:px-2.5 *:py-2 *:transition-all *:duration-150 dark:*:hover:text-[#0B1220]">
                             </ul>
                         </div>
                         <!-- -------------------------------------------- -->
+
+                        <!-- Done List -->
                         <div id="done" class="w-1/2 min-h-full">
                             <ul id="doneList"
                                 class="min-h-full *:flex *:justify-between *:dark:text-[#0B1220] *:text-[20px] *:mb-2.5 *:bg-[#c5ecc7] *:px-2.5 *:py-2 *:transition-all *:duration-150 dark:*:hover:text-[#0B1220]">
-                                <!-- -------------------------------------------- -->
                             </ul>
                         </div>
+                        <!-- -------------------------------------------- -->
                     </div>
                 </div>
                 <div id="trash" class="w-[88%] h-full">
@@ -113,15 +116,24 @@
                             class="flex flex-wrap w-full gap-2.5 *:max-h-[50px] *:w-[32%] p-5 h-full *:flex *:justify-between *:dark:text-[#0B1220] *:text-[20px] *:mb-2.5 *:bg-[#facccc] *:px-2.5 *:py-2 *:transition-all *:duration-150 dark:*:hover:text-[#0B1220]">
                         </ul>
                     </div>
-                    <!-- trash ul -->
+                    <!-- trash ul End-->
                 </div>
             </main>
             <!-- end main -->
+            <footer>
+                <canvas id="canvas"></canvas>
+            </footer>
         </div>
     </div>
 </body>
 
-<script type="module" src="./src/script/jalaali.js"></script> 
+<script type="module" src="./src/script/jalaali.js"></script>
 <script src="./src/script/main.js" defer></script>
+<script>
+    import { Application } from '@splinetool/runtime';
+    const canvas = document.getElementById(`canvas`);
+    const app = new Application(canvas);
+    app.load(`src/3D/scene.splinecode`);
+</script>
 
 </html>

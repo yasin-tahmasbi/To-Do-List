@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/yasin-tahmasbi/To-Do-List#readme",
   "dependencies": {
+    "@splinetool/runtime": "^1.12.19",
     "@tailwindcss/cli": "^4.1.17",
     "moment": "^2.30.1",
     "moment-jalaali": "^0.10.4",
