@@ -175,10 +175,10 @@ function newLi(taskObj) {
   li.dataset.id = taskObj.id;
   li.innerHTML = ` 
       <p>${taskObj.text}</p>
-      <div class="flex gap-4 *:cursor-pointer items-center">
+      <div class="flex gap-1 sm:gap-4 *:cursor-pointer items-center">
         <i class="ri-delete-bin-fill text-[#EF233C]"></i>
         <i class="ri-pencil-fill"></i>
-        <i class="ri-check-line text-[23px] font-black"></i>
+        <i class="ri-check-line *:sm:text-[20px] text-[12px] sm:font-black"></i>
       </div>
     `;
   taskUl.appendChild(li);
@@ -204,7 +204,7 @@ function newLi(taskObj) {
     const input = document.createElement("input");
     input.type = "text";
     input.value = currentText;
-    input.className = "border-2 border-[#00B4D8] px-2 py-1 outline-0";
+    input.className = "border-2 border-[#00B4D8] sm:px-2 sm:py-1 outline-0 w-[70%]";
     li.replaceChild(input, p);
 
     input.focus();
@@ -251,7 +251,7 @@ function doneItem(taskObj) {
   li.dataset.id = taskObj.id;
   li.innerHTML = `
       <del>${taskObj.text}</del>
-     <div class="flex gap-4 *:cursor-pointer">
+     <div class="flex gap-1 sm:gap-4 *:cursor-pointer">
        <i class="ri-delete-bin-fill text-[#EF233C]"></i>
        <i class="ri-arrow-go-back-fill"></i>
      </div>
@@ -289,7 +289,7 @@ function newTrashLi(taskObj) {
   li.dataset.id = taskObj.id;
   li.innerHTML = ` 
       <p>${taskObj.text}</p>
-      <div class="flex gap-4 *:cursor-pointer items-center">
+      <div class="flex gap-1 sm:gap-4 *:cursor-pointer items-center">
         <i class="ri-delete-bin-fill text-[#EF233C]"></i>
       </div>
     `;
