@@ -45,7 +45,7 @@ function toggle() {
       document.documentElement.classList.add("dark");
     }
     darkModeSpan.classList.remove("left-1");
-    darkModeSpan.classList.add("left-11");
+    darkModeSpan.classList.add("left-7", "sm:left-11");
 
     darkModeBtn.classList.remove("bg-[#73C0FC]");
     darkModeBtn.classList.add("bg-[#183153]");
@@ -60,7 +60,7 @@ function toggle() {
     if (localStorage.getItem("theme") === "light") {
       document.documentElement.classList.remove("dark");
     }
-    darkModeSpan.classList.remove("left-11");
+    darkModeSpan.classList.remove("left-7", "sm:left-11");
     darkModeSpan.classList.add("left-1");
 
     darkModeBtn.classList.remove("bg-[#183153]");
