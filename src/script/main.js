@@ -364,16 +364,14 @@ trashSearch.addEventListener("keyup", (e) => {
 });
 
 // footer ////////////////////////////////////////////////////
-const footer = document.getElementById('footer')
-const footerImgWrapper = document.getElementById("footerImgWrapper");
 const footerText = document.getElementById("footerText");
+const footerImg = document.getElementById("footerImg");
 
 const footerWord = "www.yasintahmasbi.ir";
 let footerTypingInterval = null;
 
-footerImgWrapper.addEventListener("mouseenter", () => {
-
-   if (footerTypingInterval) {
+footerImg.addEventListener("mouseenter", () => {
+  if (footerTypingInterval) {
     clearInterval(footerTypingInterval);
     footerTypingInterval = null;
   }
@@ -382,11 +380,11 @@ footerImgWrapper.addEventListener("mouseenter", () => {
 
   footerTypingInterval = setInterval(() => {
     footerText.innerText += footerWord[footerIndex];
-    footerIndex++
+    footerIndex++;
 
     if (footerIndex >= footerWord.length) {
-      clearInterval(footerTypingInterval)
-      footerTypingInterval = null
+      clearInterval(footerTypingInterval);
+      footerTypingInterval = null;
     }
   }, 50);
 });
