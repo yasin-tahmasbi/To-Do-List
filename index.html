@@ -13,7 +13,7 @@
 </head>
 <!-- #c9e5ff -->
 
-<body class="bg-[#ebf1fd] dark:bg-[#071427] min-h-screen">
+<body class="bg-[#e4ecfd] dark:bg-[#071427] min-h-screen">
     <div class="container min-w-full h-full *:text-[#0B1220] *:dark:text-[#E7F6FF]">
         <div class="w-full h-full border-black">
             <!-- start header -->
@@ -26,7 +26,7 @@
                         <span id="darkModeSpan"
                             class="absolute transition-all duration-300 ease-linear flex items-center justify-center w-5 h-[80%] sm:w-6 rounded-[90%] left-1 bg-[#E8E8E8]"></span>
                         <svg id="svgSun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                            class="absolute block w-[20px] h-[80%] left-[29px] sm:w-[30px] sm:h-[80%] sm:left-[42px]">
+                            class="absolute block w-5 h-[80%] left-[29px] sm:w-[30px] sm:h-[80%] sm:left-[42px]">
                             <g fill="#ffd43b">
                                 <circle r="5" cy="12" cx="12"></circle>
                                 <path
@@ -35,7 +35,7 @@
                             </g>
                         </svg>
                         <svg id="svgMoon"
-                            class="absolute w-[20px] h-[80%] left-[1px] sm:w-[30px] sm:h-[80%] sm:w-[30px] sm:h-[80%] sm:left-1 hidden fill-[#fff9f9]"
+                            class="absolute w-5 h-[80%] left-px sm:h-[80%] sm:w-[30px] sm:left-1 hidden fill-[#fff9f9]"
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
                             <path
                                 d="m223.5 32c-123.5 0-223.5 100.3-223.5 224s100 224 223.5 224c60.6 0 115.5-24.2 155.8-63.4 5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6-96.9 0-175.5-78.8-175.5-176 0-65.8 36-123.1 89.3-153.3 6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z">
@@ -46,7 +46,7 @@
                 <!-- dark mode btn -->
                 <!-- header text -->
                 <div class="header-text-wrapper w-full sm:w-[59%] justify-center order-3 sm:order-2">
-                    <h1 id="txt" class="header-text font-medium text-[25px]"></h1>
+                    <h1 id="txt" class="header-text font-medium text-[25px] mb-1.5 sm:mb-0"></h1>
                 </div>
                 <!-- header text -->
                 <!-- date -->
@@ -59,7 +59,7 @@
             </header>
             <!-- end header -->
             <!-- start main -->
-            <main class="w-full flex h-[80vh]">
+            <main class="w-full flex h-[78vh]">
                 <!-- start aside -->
                 <aside id="aside" class="w-[20%] sm:w-[12%] border-r-2 sm:py-2 h-full">
                     <ul
@@ -70,10 +70,10 @@
                 </aside>
                 <!-- end aside -->
 
-                <div id="task" class="w-[80%] sm:w-[88%] h-full p-1 pb-0 flex justify-center items-center flex-wrap">
+                <div id="task" class="w-[80%] sm:w-[88%] h-full p-1 flex justify-center items-center flex-wrap">
                     <!-- inputs -->
                     <div
-                        class="flex items-center justify-between gap-1 w-full h-[7%] sm:h-[12%] px-2 sm:px-5 pb-5 sm:pb-10 pt-[15px] sm:pt-[30px] border-b-2">
+                        class="flex items-center justify-between gap-1 w-full h-[7%] sm:h-[12%] px-2 sm:px-5 pb-5 sm:pb-10 pt-[15px] sm:pt-[30px] border-b">
                         <div id="inputWrapper" class="inputWrapper w-2/3 sm:max-w-1/2 flex items-center justify-start">
                             <input id="taskInput" type="text"
                                 class="border outline-0 border-[#00B4D8] w-[60%] sm:w-[60%] sm:h-[45px] pl-1 sm:pl-2.5 placeholder:text-[#64748B] placeholder:dark:text-[#94A3B8] placeholder:text-[12px] sm:placeholder:text-[16px]"
@@ -92,7 +92,7 @@
                     <!-- End inputs -->
                     <div class="flex sm:h-[88%] h-[93%] w-full *:sm:p-5">
                         <!-- New Task List -->
-                        <div id="doIt" class="w-1/2 h-full border-r-2">
+                        <div id="doIt" class="w-1/2 h-full border-r">
                             <ul id="taskUl"
                                 class="h-full *:flex *:justify-between *:sm:text-[20px] text-[12px] *:hover:bg-[#a7e0ea]  *:sm:px-2.5 px-1.5 *:sm:py-2 py-1.5 *:transition-all *:duration-150 dark:*:hover:text-[#0B1220]">
                             </ul>
@@ -117,15 +117,20 @@
                     <!-- trash ul -->
                     <div id="trashUlWrapper" class="h-full w-full">
                         <ul id="trashUl"
-                            class="flex flex-wrap w-full sm:gap-2.5 gap-1.5 *:sm:max-h-[50px] max-h-[20px] *:sm:w-[32%] *:w-[70%] sm:p-5 p-2 h-full *:flex *:justify-between *:dark:text-[#0B1220] *:sm:text-[20px] *:text-[12px] *:sm:mb-2.5  *:bg-[#facccc] *:sm:px-2.5 *:sm:py-2 *:p-1 *:transition-all *:duration-150 dark:*:hover:text-[#0B1220]">
+                            class="flex flex-wrap w-full sm:gap-2.5 gap-1.5 *:sm:max-h-[50px] max-h-5 *:sm:w-[32%] *:w-[70%] sm:p-5 p-2 h-full *:flex *:justify-between *:dark:text-[#0B1220] *:sm:text-[20px] *:text-[12px] *:sm:mb-2.5  *:bg-[#facccc] *:sm:px-2.5 *:sm:py-2 *:p-1 *:transition-all *:duration-150 dark:*:hover:text-[#0B1220]">
                         </ul>
                     </div>
                     <!-- trash ul End-->
                 </div>
             </main>
             <!-- end main -->
-            <footer class="bg-amber-500 h-[10vh] w-full">
-
+            <footer id="footer" class="h-[12vh] w-full flex items-center justify-center border-t-2 relative">
+                <a href="https://www.yasintahmasbi.ir" target="_blank" id="footerImgWrapper"
+                    class="flex items-center gap-5 absolute sm:left-[25%]">
+                    <img id="footerImg" src="src/img/yasin.jpg" alt="yasin" class="w-20 h-{80px} rounded-[50%] [box-shadow:5px_3px_10px_-2px_#071427]">
+                    <p id="footerText" href="" target="_blank" class="font-semibold">
+                        www.yasintahmasbi.ir</p>
+                </a>
             </footer>
         </div>
     </div>
@@ -133,5 +138,6 @@
 
 <script type="module" src="./src/script/jalaali.js"></script>
 <script src="./src/script/main.js" defer></script>
+<script src="./src/script/gsap.js" defer></script>
 
 </html>

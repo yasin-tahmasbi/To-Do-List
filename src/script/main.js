@@ -4,7 +4,6 @@ const txt = document.getElementById("txt");
 
 let typeIndex = 1;
 let deleteIndex = 0;
-let wordIndex = 0;
 
 const word = ["Just Do It"];
 
@@ -105,7 +104,6 @@ asideLi.forEach((item, index) => {
 // aside click //////////////////////////////////////////
 
 // tasks /////////////////////////////////////////////
-
 const taskInput = document.getElementById("taskInput");
 const addBtn = document.getElementById("addBtn");
 const taskUl = document.getElementById("taskUl");
@@ -204,7 +202,8 @@ function newLi(taskObj) {
     const input = document.createElement("input");
     input.type = "text";
     input.value = currentText;
-    input.className = "border-2 border-[#00B4D8] sm:px-2 sm:py-1 outline-0 w-[70%]";
+    input.className =
+      "border-2 border-[#00B4D8] sm:px-2 sm:py-1 outline-0 w-[70%]";
     li.replaceChild(input, p);
 
     input.focus();
@@ -364,4 +363,30 @@ trashSearch.addEventListener("keyup", (e) => {
   });
 });
 
-// tasks //
+// footer ////////////////////////////////////////////////////
+const footer = document.getElementById('footer')
+const footerImgWrapper = document.getElementById("footerImgWrapper");
+const footerText = document.getElementById("footerText");
+
+const footerWord = "www.yasintahmasbi.ir";
+let footerTypingInterval = null;
+
+footerImgWrapper.addEventListener("mouseenter", () => {
+
+   if (footerTypingInterval) {
+    clearInterval(footerTypingInterval);
+    footerTypingInterval = null;
+  }
+  footerText.innerText = "";
+  let footerIndex = 0;
+
+  footerTypingInterval = setInterval(() => {
+    footerText.innerText += footerWord[footerIndex];
+    footerIndex++
+
+    if (footerIndex >= footerWord.length) {
+      clearInterval(footerTypingInterval)
+      footerTypingInterval = null
+    }
+  }, 50);
+});
